@@ -1,0 +1,88 @@
+Carrito Compras. (MSc. Ángel Daniel Fuentes S.)
+
+1.- Agregar un producto al carrito
+	En la vista del producto, debemos tener un
+	Formulario que almenos indiquemos la 
+	cantidad que queremos comprar del mismo.
+
+	Vamos a una ruta 
+		Middleware chequee si el usuario está o no
+		logueado
+		Middleware que chequee que la cantidad de productos a agregar ( no sea cero )
+	LLamar al controlador: Buscar el producto (id)
+	Determinar si hay errores o no
+ 	Antes de armar el producto - Se debe efectuar el calculo del precio de ser necesario, esto es
+	por si manejan descuentos 
+	Armar el producto 
+	Guardar al carrito. (Todo los detalles del produto	
+	Deben guardarlos aquí - Fotografía del mismo)
+ 	(Debemos guardar el estado 
+	Estado = 1 Pendiente por la compra 
+	Estado = 0 Comprado
+	cantidad - subtotal - usuarioId - precio - productoId
+	CarritoId = null (Al comprar se debe guardar el id del 
+	carrito generado)
+	Envio al usuario a donde yo desee (Yo lo envio a que continue viendo los Productos)
+	
+2.- Ver el carrito
+	Llamado al carrito - Ruta
+	Controlador - Buscar todos los productos en la tabla (items) que poseea
+	el usuario que está logueado y que aun no esten con	
+	el estado de comprado	 (Es decir que el Estado sea = 1)
+	Luego debemos: Calcular el total de la compra del usuario
+	Finalmente a la vista  del carrito,  se le debe enviar todos los productos que el cliente
+	tiene pendiente por comprar y el total de esa compra previamnete calculada
+
+3.- Eliminar productos del carrito
+	Formulario - Para enviar via método POST el (id) del 
+	producto que se va a eliminar, esto lo envio de forma oculta (hidden)
+	Determinar que el elemento a eliminar le pertenece al usuario Logueado y que además 
+	corresponda al enviado desde el formulario
+	Se hace un redirect al usuario al mismo carrito. Por si desea seguir eliminando, Cerrar la	
+	compra o seguir comprando
+	
+
+4.- Efectuar la compra
+	Formulario -  Método POST - Carrito y allí le indico COMPRAR - Lo llevo a la ruta
+
+	Buscamos los Items de ese usuario y además que el estado sea pendiente de compra 
+	en nuestro caso: estado = 1.
+
+	Debo generar el total de la compra de ese usuario logueado
+
+	Generar la orden de pago - Busco por fecha de creación de forma DESC y de ese 	
+	resultado tomo la última orden de compra y le sumo 1 - Si no existe una orden 
+	de compra previamente entonces allí decido por que número iniciar
+
+	Crear el nuevo carrito (id - usuarioId - total - ordenCompra)
+
+	Le asigno a los items comprados por ese usuario el id del carrito generado y 	
+	Cambio el estado del producto en la tabla de detalle (items) por estado 0 = Comprado
+
+	-----------------------------------
+	Métodos de pagos   -  API  (Entidad)
+	Métodos de envíos - Aplicación.
+	-----------------------------------
+
+	Generar la Orden de compra (Donde se detalle los productos de esa compra)
+
+	Mostrar la orden de compra - con el detalle de los productos
+
+	enviar al usuario a donde yo desee. (Home)
+
+
+
+
+	  		
+
+
+
+
+
+
+
+
+
+
+
+	

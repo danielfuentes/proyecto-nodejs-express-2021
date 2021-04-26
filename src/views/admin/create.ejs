@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <%- include('../partials/head') %>
+  <body>
+    <div class="container-fluid">
+      <%- include('../partials/navBar') %>  
+
+        <!-- Cuerpo principal -->
+        <section class="row">
+          <article class="col-12  card pt-5" >
+                  <div class="card-body">
+                    <h1 class="card-title text-center">Crear el Plato</h1>
+                  </div>
+          </article>
+      </section>
+
+        <section class="bg-home pt-4">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-8 mx-auto bg-light ">
+                        <div class="signup-form">
+                            <form action="/admin/create" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="nombre" placeholder="Nombre del plato" required="required">
+                                </div>	
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="descripcion" placeholder="Descripción del plato" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" name="precio" placeholder="Indique el precio" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <select  name="descuento" class="custom-select" required>
+                                      <option selected disabled value="#">Elija su descuento</option>
+                                      <option value="0">Sin descuento</option>
+                                      <option value="15">15%</option>
+                                      <option value="30">30%</option>
+                                    </select>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" name="imagen" >
+                                  </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn btn-info">Guardar</button>
+                                    <a class="btn btn-danger" href="/administrar">Volver</a>
+                                </div>
+                            </form>
+                            
+                    </div>                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <%- include('../partials/footer') %>        <!-- Scripts para Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

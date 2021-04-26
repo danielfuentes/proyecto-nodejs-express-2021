@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "nombre": "Entradas"
+    },
+    {
+      "id": 2,
+      "nombre": "Platos principales"
+    },
+    {
+      "id": 3,
+      "nombre": "Postres"
+    },
+    {
+      "id": 4,
+      "nombre": "Bebidas"
+    }
+  ]

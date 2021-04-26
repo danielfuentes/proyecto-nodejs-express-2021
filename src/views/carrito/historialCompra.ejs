@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Incorporo el Head -->
+<%- include('../partials/head', {title: 'Historial de compras', image: ''}) %>
+
+<body>
+   <!-- Incorporo la barra de navegación -->
+   <%- include('../partials/navBar') %>
+
+   <div>
+      <div class="row">
+         <article class="col-12">
+            <h2 class="display-5 text-white bg-info text-center pt-5 ">Carrito de compras</h2>
+         </article>
+      </div>
+      <div >
+         <div class="row">
+            <div class="col-12 col-lg-8 pt-4">
+               <% if(carts.length != 0){ %>
+               <% carts.forEach(cart => { %>
+               <a href="/carrito/detalleCompra/<%= cart.id %>">
+                  <div class="col-12 mt-3">
+                     <section class="row">
+                        <h4 class="col-4"><%= new Date(cart.createdAt).toLocaleDateString() %> </h4>
+                        <section class="col-8 row info">
+                           <div class="col-6">
+                              <ul>
+                                 <% cart.items.forEach(item => { %>
+                                    <li style="font-size: 12px;">
+                                       <small>
+                                          <%= item.dish.name %> x<%= item.quantity %>
+                                       </small>
+                                    </li>
+                                 <% }) %>
+                              </ul>
+                           </div>
+                           <div class="col-6">
+                              <p >
+                                 $<%= cart.total %>
+                              </p>
+                           </div>
+                        </section>
+                        <section class="col-3">
+                           
+                        </section>
+                     </section>
+                  </div>
+               </a>
+               <hr>
+               <% }); %>
+               
+               <% } else { %>
+               <div class="col-12">
+                  <h2 class="products-title" style="padding: 100px 0; color: tomato;">Aún no tienes compras</h2>
+               </div>
+               <% } %>
+            </div>
+            <div class="col-12 col-lg-4">
+               <article >
+                  <h2 >
+                     <%= locals.usuario.firstName   %>
+                     <%=locals.usuario.lastName %>
+                  </h2>
+                  <hr>
+                  
+               </article>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   
+</body>
+
+</html>

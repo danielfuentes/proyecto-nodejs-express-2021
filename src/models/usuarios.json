@@ -1,0 +1,29 @@
+[
+  {
+    "nombre": "Daniel",
+    "apellido": "Fuentes",
+    "email": "cedavilu@gmail.com",
+    "password": "$2a$10$KecFNo50OuXtp94yfgXXl.SBCNpGSqGlQCqO8qWdKdDM1pGQ7nETW",
+    "provincia": "34",
+    "avatar": "foto-1594961387818.png",
+    "role": 1
+  },
+  {
+    "nombre": "Angel",
+    "apellido": "Fuentes",
+    "email": "dfuentes@digitalhouse.com",
+    "password": "$2a$10$Cp7fvaurTMh1WtrD6VRjR.hdR0POQk1gKAffms7cvkkw9sdg7lJUS",
+    "provincia": "06",
+    "avatar": "foto-1594961387818.png",
+    "role": 9
+  },
+  {
+    "nombre": "Eduardo",
+    "apellido": "Virgilio",
+    "email": "edu@gmail.com",
+    "password": "$2a$10$5yIabrWoFrb41EigAsSB1OiWXuOVGo6sFYAWBTVibyN9X7HvuGOoW",
+    "provincia": "06",
+    "avatar": "foto-1595634884880.jpg",
+    "role": 1
+  }
+]

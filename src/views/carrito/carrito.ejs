@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Aquí incorporo el head -->
+<%- include('../partials/head') %>
+
+<body>
+   <!-- Aquí incorporo el navbar -->
+   <%- include('../partials/navBar') %>
+
+   <div class="container products-wrapper">
+      <% if(cartProducto.length != 0){ %>
+      <div class="row">
+         <article class="col-12">
+            <h2 class="display-5 text-white bg-info text-center pt-5 ">Carrito de compras</h2>
+         </article>
+      </div>
+      <div class="product-detail">
+         <div class="row">
+            <div class="col-12 col-lg-8 pt-4">
+               <% cartProducto.forEach(item => { %>
+               
+               <div class="col-12 mt-3">
+                  <section class="row">
+                     <figure class="col-3 " >
+                        <img  class="w-100" style='border: 1px solid grey' src="/images/platos/<%= item.dish.image %>" alt="<%= item.dish.name %>">
+                     </figure>
+                     <section class="col-6 info">
+                        <p>
+                           $<%= item.salePrice; %>
+                        </p>
+                        <p><%= item.dish.name %></p>
+                     </section>
+                     <section class="col-3">
+                        <p>Cantidad: <%= item.quantity %></p>
+                        <form action="/carrito/borrarElementoCarrito" method="POST" class="mt-4">
+                           <input type="hidden" name="itemId" value="<%= item.productId %>">
+                           <button type="submit" class="btn btn-danger ">ELIMINAR</button>
+                        </form>
+                     </section>
+                  </section>
+               </div>
+               <hr>
+               <% }); %>
+               
+            </div>
+            <div class="col-12 col-lg-4">
+               <article >
+                  <h2 >
+                     Total: $<%= total %>
+                  </h2>
+                  <hr>
+
+                  <form action="/carrito/compra" method="POST"  style="display: inline-bock">
+                     <button  type="submit" class=" btn btn-info  btn-block">COMPRAR</button>
+                  </form>
+                  <hr>
+                  <a class="btn btn-success btn-block" href="/productos">Agregar más platos al carrito</a>
+                  <hr>
+               </article>
+            </div>
+         </div>
+      </div>
+      <% } else { %>
+      <div class="col-12">
+         <!--Que esto no lo vea Edu. Jajajajajajaja   Abrazos-->
+         <h2 class="text-center" style="padding: 100px 0; color: white; background-color: tomato;">No tienes platos agregados a tu carrito!!!</h2>
+      </div>
+      <% } %>
+   </div>
+
+</body>
+
+</html>

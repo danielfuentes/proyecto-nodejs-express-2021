@@ -1,0 +1,101 @@
+[
+  {
+    "nombre": "Plato uno",
+    "descripcion": " Hola como estamos Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": "500",
+    "descuento": "15",
+    "oldImagen": "plato-1593719845316.jpg",
+    "id": "1",
+    "imagen": "plato-1593720027773.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Plato dos",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 210,
+    "descuento": 0,
+    "recomendado": 1,
+    "imagen": "asparagus.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Plato tres",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 395,
+    "descuento": 30,
+    "recomendado": 1,
+    "imagen": "pizza.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Plato cuatro",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 520,
+    "descuento": 0,
+    "recomendado": 1,
+    "imagen": "meal.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Plato cinco",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 220,
+    "descuento": 15,
+    "recomendado": 1,
+    "imagen": "asparagus.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Plato seis",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 380,
+    "descuento": 0,
+    "recomendado": 0,
+    "imagen": "breakfast.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Plato siete",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 400,
+    "descuento": 15,
+    "recomendado": 0,
+    "imagen": "breakfast2.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Plato ocho",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": 140,
+    "descuento": 30,
+    "recomendado": 0,
+    "imagen": "eclair.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Plato uno",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": "480",
+    "descuento": 0,
+    "recomendado": 0,
+    "imagen": "breakfast2.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Plato uno",
+    "descripcion": "Some quick example text to build on the card title and make up the bulk of the card's content.",
+    "precio": "500",
+    "descuento": 0,
+    "recomendado": 0,
+    "imagen": "breakfast2.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Empanadas de pollo",
+    "descripcion": "Ricas empanadas con carne mechada ",
+    "precio": "120",
+    "descuento": 30,
+    "recomendado": 0,
+    "imagen": "plato-1592873770901.jpg"
+  }
+]

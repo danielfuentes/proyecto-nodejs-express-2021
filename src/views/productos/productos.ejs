@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+  <%- include('../partials/head.ejs') %>    
+<body>
+    <main class="container-fluid">
+      <%- include('../partials/navBar.ejs') %>
+      <!--Listado de nuestros productos-->
+      <section class="row">
+        <article class="col-12">
+          <h2 class="display-4 mt-5 pt-4">Los platos mas deliciosos</h2>
+        </article>
+        <article class="col-12 mt-3">
+          <div class="col-md-6  p-0">
+            <% if(categorias != 'undefined'){ %>
+              <form class="form-inline" action="/productos/categoria" method="GET">
+                <select class="custom-select form-group mb-2 "  name="categoria" id="categoria" >
+                  <option value="#" disabled >Seleccione la categoria deseada </option>
+                  <% for (const categoria of categorias) { %>
+                    <option value="<%=categoria.id %>"><%=categoria.name %></option>
+                  <% } %>
+                </select>
+                <button type="submit" class="btn btn-primary mb-2">Buscar platos categoria seleccionada</button>
+              </form>  
+            <% } %>
+          </div>  
+        </article>
+        
+        <% for(let i= 0; i < platos.length; i++){ %>
+          <article class="col-12 col-md-6 col-lg-3 card p-2 efecto tarjeta">
+            <figure >
+              <img  src="/images/platos/<%= platos[i].image%> " class="card-img-top w-100 d-block" alt="Plato">
+            </figure>
+              <% if (platos[i].discount == 30) { %>
+                <img class="descuento" src="img/promo30.png" alt="Descuento 30%">  
+              <% }else if(platos[i].discount == 15 ){ %>
+                <img class="descuento" src="img/promo15.png" alt="Descuento 30%">
+              <% } %>
+            <div class="card-body">
+              <h5 class="card-title"><%= platos[i].name%></h5>
+              <h5 class="card-title" >$  <%= platos[i].price%> </h5>
+              <p class="card-text descripcion"><%= platos[i].description%> </p>
+              <a href="/productos/detail/<%=platos[i].id %>" class="btn btn-primary">Ver detalle</a>
+            </div>
+          </article>
+        <% } %>
+      </section>
+      <%- include('../partials/footer.ejs') %>
+    </main>
+  </body>
+</html>

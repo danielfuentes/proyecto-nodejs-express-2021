@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Incorporo el Head -->
+<%- include('../partials/head', {title: 'Detalle de compra: ' + cart.orderNumber, image: ''}) %>
+
+<body>
+   <!-- Incorporo el navbar -->
+   <%- include('../partials/navBar') %>
+
+   <div>
+      <div class="row">
+         <article class="col-12">
+            <h2 class="display-5 text-white bg-info text-center pt-5 ">Detale de la compra</h2>
+         </article>
+      </div>
+      <div >
+         <div class="row">
+            <div class="col-6 col-sm-12">
+               <article  >
+                  <h2 >
+                     <strong>Numero de orden: </strong><%= cart.orderNumber %>
+                  </h2>
+                  <hr class="mb-4">
+                  <strong>Total:</strong><p>$<%= cart.total %></p>
+                  <br>
+                  <strong>Platos:</strong>
+                  <ul>
+                     <% cart.items.forEach(item => { %>
+                     <li><p><%= item.dish.name %> x<%= item.dish.quantity %> - <strong><small><%= item.dish.user.username %></small></strong></p></li>
+                     <% }) %>
+                  </ul>
+                  <br>
+                  <strong>Fecha de compra:</strong><p><%= new Date(cart.createdAt).toLocaleDateString()%></p>
+                  <hr>
+
+               </article>
+            </div>
+         </div>
+      </div>
+   </div>
+   
+</body>
+
+</html>
